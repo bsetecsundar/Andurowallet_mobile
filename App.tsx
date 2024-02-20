@@ -9,9 +9,6 @@ import React from 'react';
 import type { PropsWithChildren } from 'react';
 import {
   Image,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
@@ -21,8 +18,10 @@ import { Button } from '@rneui/themed';
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
-import { Input } from '@rneui/base';
-import { background, greylightwhite, primary, text } from './src/styles/Variables';
+import { fonts, Input } from '@rneui/base';
+import { background, gray, greyHiglight, greylightwhite, primary, regular, text, white } from './src/styles/Variables';
+import Fonts from './src/styles/Fonts';
+
 
 
 type SectionProps = PropsWithChildren<{
@@ -55,7 +54,7 @@ type SectionProps = PropsWithChildren<{
 //   );
 // }
 
-function CreatenewPassword(): React.JSX.Element {
+function ImportWallet(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -63,54 +62,101 @@ function CreatenewPassword(): React.JSX.Element {
   };
 
   return (
-    <View style={styles.bgview}>
-      <View style={styles.dflx}>
-        <View>
-          <View style={styles.logotext}>
-            <Image source={require('./src/assets/images/logo.png')} style={[styles.logoimg, { width: 200, resizeMode: 'contain', }]} />
+    <>
+      <View style={styles.bgview}>
+        <View style={styles.dflx}>
+          <View>
+            <View>
+              <Text style={[styles.gettingpara, Fonts.medium]}>
+                TOTAL BALANCE
+              </Text>
+              <Text style={[styles.importwalletpara, Fonts.regular]}>
+                $0.00 USD
+              </Text>
+              <View style={[styles.dflxdash]}>
+                <View >
+                  <Button size="lg" buttonStyle={{
+                    backgroundColor: primary,
+                    borderRadius: 8,
+                    width:60,
+                    height:60,
+                  }} titleStyle={{
+                    color: '#000',
+                    fontWeight: 'bold', fontSize: 18,
+                  }} containerStyle={{
+                    marginVertical: 10,
+                    paddingRight:22
+                  }}><Image source={require('./src/assets/images/up-send-arrow.png')}
+                    /></Button>
+                  <Text style={[styles.sendtext]}>Send</Text>
+                </View>
+                <View>
+                  <Button size="lg" buttonStyle={{
+                    backgroundColor: primary,
+                    borderRadius: 8,
+                    width:60,
+                    height:60,
+                  }} titleStyle={{
+                    color: '#000',
+                    fontWeight: 'bold', fontSize: 18,
+                  }} containerStyle={{
+                    marginVertical: 10,
+ 
+                  }}><Image source={require('./src/assets/images/down-receive-arrow.png')} /></Button>
+                  <Text style={[styles.sendtext]}>Receive</Text>
+                </View>
+              </View>
+            </View>
           </View>
           <View>
-            <Text style={styles.gettingpara}>
-              Create New Password
-            </Text>
-            <View style={styles.inputflx}>
-              <Input
-                placeholder="New Password"
-                placeholderTextColor="#fff"
-                inputContainerStyle={{ borderBottomWidth: 0 }}
-                containerStyle={[{
-                  borderWidth: 2, height: 50, borderColor: greylightwhite, marginBottom: 8, borderRadius: 4, width: 250,
-                  marginTop: 8,
-                }]}
-                style={{color:'#fff'}}
-              />
-              <Input
-                placeholder="Confirm Password"
-                placeholderTextColor="#fff"
-                containerStyle={[ {
-                  borderWidth: 2, height: 50, borderColor: greylightwhite, marginBottom: 8, borderRadius: 4, width: 250,
-                }]}
-                inputContainerStyle={{ borderBottomWidth: 0, }}
-                style={{color:'#fff'}}
-              />
+          <View>
+            <View style={[styles.dashboardlist]}>
+              <View style={[styles.dashboradlistflx]}>
+                <View>
+                <Image source={require('./src/assets/images/bitcoin-main.png')} 
+                style={[styles.logoimg, { width: 45, resizeMode: 'contain',marginRight:14, }]} />
+                </View>
+                <View>
+                  <Text style={[Fonts.regular,{color:greyHiglight,fontSize:17,}]}>
+                    BTC
+                  </Text>
+                  <Text style={[Fonts.Light,{color:greyHiglight,fontSize:16}]}>
+                    Bitcoin Testnet
+                  </Text>
+                </View>
+              </View>
+              <View>
+                <Text style={[Fonts.regular,{color:greyHiglight,fontSize:17,}]}>0 BTC</Text>
+                <Text style={[Fonts.Light,{color:greyHiglight,fontSize:16}]}>$0.00 USD</Text>
+              </View>
             </View>
-            <Button size="lg" buttonStyle={{
-              backgroundColor: primary,
-              borderRadius: 4,
-            }} titleStyle={{
-              color: '#000',
-              fontWeight: 'bold', fontSize: 18,
-            }} containerStyle={{
-              marginVertical: 10,
-            }}>Create</Button>
           </View>
-          <Text style={[styles.gettingpara, { color: primary }]}>
-            Skip
-          </Text>
-
+          <View>
+            <View style={[styles.dashboardlist]}>
+              <View style={[styles.dashboradlistflx]}>
+                <View>
+                <Image source={require('./src/assets/images/bitcoin_testnet.png')} 
+                style={[styles.logoimg, { width: 45, resizeMode: 'contain',marginRight:14, }]} />
+                </View>
+                <View>
+                  <Text style={[Fonts.regular,{color:greyHiglight,fontSize:17,}]}>
+                    BTC
+                  </Text>
+                  <Text style={[Fonts.Light,{color:greyHiglight,fontSize:16}]}>
+                    Bitcoin Testnet
+                  </Text>
+                </View>
+              </View>
+              <View>
+                <Text style={[Fonts.regular,{color:greyHiglight,fontSize:17,}]}>0 BTC</Text>
+                <Text style={[Fonts.Light,{color:greyHiglight,fontSize:16}]}>$0.00 USD</Text>
+              </View>
+            </View>
+          </View>
+        </View>
         </View>
       </View>
-    </View>
+      </>
   );
 }
 
@@ -125,37 +171,59 @@ const styles = StyleSheet.create({
   },
   dflx: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
+    alignItems: 'flex-start',
+    paddingLeft: 16,
+    paddingRight: 16,
   },
   gettingpara: {
-    fontSize: 18,
-    textAlign: 'center',
+    fontSize: 30,
     color: text,
     paddingBottom: 8,
+    marginTop:22,
+  },
+  importwalletpara: {
+    fontSize: 32,
+    color: text,
+    paddingBottom: 8,
+    width: 255,
+    marginLeft: 'auto',
+    marginRight: 'auto'
   },
   logoimg: {
     marginLeft: 'auto',
     marginRight: 'auto',
   },
-  input: {
-    height: 50,
-    borderWidth: 2,
-    padding: 10,
-    borderColor: greylightwhite,
-    width: 250,
-    borderRadius: 4,
+
+  dflxdash:{
+    display:'flex',
+    alignItems:'center',
+    flexDirection:'row',
+    marginTop:10,
+    marginBottom:10,
   },
-  inputnbm: {
-    paddingBottom: 8,
-    paddingTop: 8,
+  sendtext:{
+    color:white,
+    fontSize:22,
   },
-  inputflx: {
-    flex: 0,
-    flexDirection: 'column',
-    rowGap: 2,
+  dashboardlist:{
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between',
+    width:'100%',
+    borderWidth:1,
+    borderColor:greylightwhite,
+    padding:12,
+    borderRadius:12,
+    marginTop:16,
   },
+  dashboradlistflx:{
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between', 
+  },
+
 });
 
-export default CreatenewPassword;
+export default ImportWallet;
