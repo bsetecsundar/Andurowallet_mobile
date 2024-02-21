@@ -6,66 +6,26 @@
  */
 
 import React from 'react';
-import type { PropsWithChildren } from 'react';
 import {
   Image,
-  StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
 import { Button } from '@rneui/themed';
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
-import { background, text, primary,black } from '../../styles/Variables';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-// function Section({ children, title }: SectionProps): React.JSX.Element {
-//   const isDarkMode = useColorScheme() === 'dark';
-//   return (
-//     <View style={styles.sectionContainer}>
-//       <Text
-//         style={[
-//           styles.sectionTitle,
-//           {
-//             color: isDarkMode ? Colors.white : Colors.black,
-//           },
-//         ]}>
-//         {title}
-//       </Text>
-//       <Text
-//         style={[
-//           styles.sectionDescription,
-//           {
-//             color: isDarkMode ? Colors.light : Colors.dark,
-//           },
-//         ]}>
-//         {children}
-//       </Text>
-//     </View>
-//   );
-// }
+import { primary,black } from '../../../src/styles/Variables';
+import Custom from '../../../src/styles/Custom';
 
 function GettingStart(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   return (
     <View
-    style={styles.bgview}>
-      <View style={styles.dflx}>
+    style={Custom.bgview}>
+      <View style={Custom.dflx}>
         <View>
-          <View style={styles.logotext}>
-            <Image source={require('./src/assets/images/logo.png')} style={[styles.logoimg,]} />
+          <View style={Custom.logotextbtm}>
+            <Image source={require('./src/assets/images/logo.png')} style={[Custom.logoimgget,]} />
           </View>
-          <Text style={styles.gettingpara}>
+          <Text style={Custom.startget}>
             Your connection to next-generation Bitcoin applications
           </Text>
           <View>
@@ -83,34 +43,5 @@ function GettingStart(): React.JSX.Element {
   );
 }
 
-const styles = StyleSheet.create({
-  bgview:{
-    backgroundColor: background,
-    height: '100%',
-  },
-  logotext: {
-    textAlign: 'center',
-    paddingBottom: 10,
-  },
-  dflx: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-  },
-  gettingpara: {
-    fontSize: 18,
-    paddingRight: 2,
-    textAlign: 'center',
-    color:text,
-    paddingBottom:22,
-  },
-  logoimg: {
-    marginLeft:'auto',
-    marginRight:'auto',
-    width: 200,
-    resizeMode: 'contain'
-  }
-});
 
 export default GettingStart;

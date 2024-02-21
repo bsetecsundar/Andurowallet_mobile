@@ -6,74 +6,36 @@
  */
 
 import React from 'react';
-import type { PropsWithChildren } from 'react';
 import {
   Image,
-  StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
 import { Button } from '../../../node_modules/@rneui/themed';
-import { background, black, greyHiglight, primary, text } from '../../styles/Variables';
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+import { black, primary, } from '../../../src/styles/Variables';
+import Custom from '../../../src/styles/Custom';
 
-// function Section({ children, title }: SectionProps): React.JSX.Element {
-//   const isDarkMode = useColorScheme() === 'dark';
-//   return (
-//     <View style={styles.sectionContainer}>
-//       <Text
-//         style={[
-//           styles.sectionTitle,
-//           {
-//             color: isDarkMode ? Colors.white : Colors.black,
-//           },
-//         ]}>
-//         {title}
-//       </Text>
-//       <Text
-//         style={[
-//           styles.sectionDescription,
-//           {
-//             color: isDarkMode ? Colors.light : Colors.dark,
-//           },
-//         ]}>
-//         {children}
-//       </Text>
-//     </View>
-//   );
-// }
 
 function CreateWallet(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   return (
-    <View style={styles.bgview}>
-      <View style={styles.dflx}>
+    <View style={Custom.bgview}>
+      <View style={Custom.dflx}>
         <View>
-          <View style={styles.logotext}>
-            <Image source={require('./src/assets/images/logo.png')} style={[styles.logoimg, { width: 200, resizeMode: 'contain', }]} />
+          <View style={Custom.logotextbtm}>
+            <Image source={require('./src/assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
           </View>
-          <View style={styles.creaeborder}>
-            <View style={styles.fontplus}>
+          <View style={Custom.creaeborder}>
+            <View style={Custom.fontplus}>
               <View>
-                <Image source={require('./src/assets/images/success.png')} style={[styles.logoimg, { width: 150, resizeMode: 'contain', }]} />
+                <Image source={require('./src/assets/images/success.png')} style={[Custom.logoimg, { width: 150, resizeMode: 'contain', }]} />
               </View>
-              <Text style={styles.gettingpara}>
+              <Text style={Custom.greatingpara}>
                 Thanks for using Anduro wallet. Your Wallet has been created successfully
               </Text>
             </View>
           </View>
-          <View style={[styles.dflxremind]} >
+          <View style={[Custom.dflxremind]} >
             <Button size="lg" buttonStyle={{
               backgroundColor: primary,
               borderRadius: 4,
@@ -89,53 +51,5 @@ function CreateWallet(): React.JSX.Element {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  bgview: {
-    backgroundColor:background,
-    height: '100%',
-  },
-  logotext: {
-    textAlign: 'center',
-    paddingBottom: 10,
-  },
-  dflx: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-  },
-  gettingpara: {
-    fontSize: 22,
-    paddingRight: 2,
-    textAlign: 'center',
-    color: text,
-    paddingBottom: 16,
-    marginTop: 12,
-  },
-  logoimg: {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-  creaeborder: {
-    borderStyle: 'solid',
-    borderColor:  greyHiglight,
-    borderWidth: 1,
-    width: 300,
-    padding: 24,
-    marginBottom: 16,
-  },
-  fontplus: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  dflxremind: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
-});
 
 export default CreateWallet;
