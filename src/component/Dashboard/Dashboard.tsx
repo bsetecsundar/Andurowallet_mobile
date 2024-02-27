@@ -92,7 +92,7 @@ function ImportWallet(): React.JSX.Element {
             <View style={[Custom.dashboardlist]}>
               <View style={[Custom.dashboradlistflx]}>
                 <View>
-                <Image source={require('./src/assets/images/bitcoin_testnet.png')} 
+                <Image source={require('./src/assets/images/bitcoin.png')} 
                 style={[Custom.logoimg, { width: 45, resizeMode: 'contain',marginRight:14, }]} />
                 </View>
                 <View>

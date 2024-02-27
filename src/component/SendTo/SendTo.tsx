@@ -11,11 +11,11 @@ import {
   Text,
   View,
 } from 'react-native';
-import Custom from './src/styles/Custom';
+import Custom from '../../../src/styles/Custom';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons/faCircleExclamation';
 import { Input } from '@rneui/base';
-import { greylightwhite } from './src/styles/Variables';
+import { greylightwhite } from '../../../src/styles/Variables';
 
 function Header(): React.JSX.Element {
   return (

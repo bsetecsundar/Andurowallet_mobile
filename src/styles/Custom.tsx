@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { background, gray, greyHiglight, greylightwhite, text, white } from "./Variables";
+import { background, gray, greyHiglight, greylightwhite, text, white, } from "./Variables";
 export default StyleSheet.create({
     bgview: {
         backgroundColor: background,
@@ -263,5 +263,151 @@ export default StyleSheet.create({
         fontSize:20,
         position:'absolute',
         right:0
+      },
+      postiotoggle:{
+        position:'absolute',
+        right:0, 
+      },
+      creaebordertopback :{
+        borderStyle: 'solid',
+        borderColor: greyHiglight,
+        borderWidth: 1,
+        width: 300,
+        padding: 24,
+        marginBottom: 16,
+        marginTop: 16,
+        position:'relative',
+        
+      },
+      dflxremindabsolut:{
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position:"absolute",
+        left: 0,
+        right: 0,
+        top: '38%',
+      },
+      peginimg:{
+        width:40,
+        height:40,
+      },
+      homepageflx:{
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
+        width:'100%',
+      },
+      homebuton:{
+        display:'flex',
+        alignItems:'center',
+        flexDirection:'row',
+        marginTop:10,
+        marginBottom:10,
+        justifyContent:"center",
+        width:"100%",
+      },
+      bitcoinhome:{
+        width: 45, 
+        resizeMode: 'contain',
+        marginRight:14,
+      },
+      Transactiontitle:{
+        color:white,
+        fontSize:24,
+        marginTop:40,
+      },
+      dashboardbtc:{
+        color:greyHiglight,
+        fontSize:17,
+      },
+      btcoindash:{
+        color:greyHiglight,
+        fontSize:16
+      },
+      homebitcoin:{
+        width: 80, 
+        resizeMode: 'contain',
+        marginRight:14,
+      },
+      arrow:{
+        fontSize:32,
+      },
+      sendheader:{
+        color:white,
+        fontSize:22,
+        textAlign:'center'
+      },
+      marginleftright:{
+        marginLeft:14,
+        marginRight:14
+      },
+      sendflx:{
+        display: "flex", 
+        flexDirection: "row",
+         alignItems: "center"
+      },
+      sendwidsev:{
+        width:'74%'
+      },
+      sendwidleft:{
+        width: "28%"
+      },
+      sendrightwid:{
+        width: "72%"
+      },
+      sendlabel:{
+        fontSize: 18, 
+        color: white
+      },
+      sendrighinpu:{
+        fontSize: 18, 
+        color: white, 
+        paddingLeft: 8
+      },
+      sendtoppadd:{
+        color:white,
+        fontSize:18,
+        paddingTop:10
+      },
+      receiveclip:{
+        color:white,
+      },
+      receivedaddress:{
+        fontSize: 21,
+        paddingRight: 2,
+        textAlign: 'center',
+        color: text,
+        paddingBottom: 16,
+        marginTop: 12,
+      },
+      setpasswordheder:{
+        width:'100%',
+        alignItems: 'center',
+        textAlign: 'center',
+        backgroundColor:'#e55353',
+        paddingBottom:13,
+        paddingTop:13,
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'center'
+      },
+      headertool:{
+        color:white,
+        fontSize:18,
+        paddingRight:12,
+        fontWeight:'500',
+      },
+      headersend:{
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        width:'100%',
+        alignItems: 'center',
+        textAlign: 'center',
+        backgroundColor:gray,
+        padding:13
       }
 });
