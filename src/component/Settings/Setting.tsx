@@ -22,63 +22,86 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight
 import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
 import { faLock } from '@fortawesome/free-solid-svg-icons/faLock';
 import { faEye } from '@fortawesome/free-solid-svg-icons/faEye';
+import { Navigation } from 'react-native-navigation';
 
-export function Setting(): React.JSX.Element {
-    const [checked, setChecked] = useState(false);
-    
-    const toggleSwitch = () => {
-      setChecked(!checked);
-    };
+export function Setting(props: any): React.JSX.Element {
+  const [checked, setChecked] = useState(false);
+
+  const toggleSwitch = () => {
+    setChecked(!checked);
+  };
   return (
     <>
-    <SafeAreaView>
-      <View style={Custom.bgview}>
-        <View>
-          <View style={Custom.settingsborder}>
-            <Button buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
-              <FontAwesomeIcon icon={faWallet} size={24} style={Custom.iconsetting} />
-              <Text style={[Fonts.regular, Custom.settingtitle]}>
-                Backup Wallet
-              </Text>
-              <FontAwesomeIcon icon={faChevronRight} size={20} style={Custom.iconsettt} />
-            </Button>
-          </View>
-          <View style={Custom.settingsborder}>
-            <Button buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
-              <FontAwesomeIcon icon={faCode} size={24} style={Custom.iconsetting} />
-              <Text style={[Fonts.regular, Custom.settingtitle]}>
-                Developer Mode
-              </Text>
-              <Switch
-      value={checked}
-      onValueChange={(value) => setChecked(value)}
-      style={[Custom.postiotoggle,]}
-      trackColor={{ true: '#04f76e', false: 'white' }}
-      thumbColor='#FFF'
-      
-    />
-            </Button>
-          </View>
-          <View style={Custom.settingsborder}>
-            <Button buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
-              <FontAwesomeIcon icon={faEye} size={24} style={Custom.iconsetting} />
-              <Text style={[Fonts.regular, Custom.settingtitle]}>
-                Change Password
-              </Text>
-              <FontAwesomeIcon icon={faChevronRight} size={20} style={Custom.iconsettt} />
-            </Button>
-          </View>
-          <View style={Custom.settingsborder}>
-            <Button buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
-              <FontAwesomeIcon icon={faLock} size={24} style={Custom.iconsetting} />
-              <Text style={[Fonts.regular, Custom.settingtitle]}>
-                Lock
-              </Text>
-              <FontAwesomeIcon icon={faChevronRight} size={20} style={Custom.iconsettt} />
-            </Button>
+      <SafeAreaView>
+        <View style={Custom.bgview}>
+          <View>
+            <View style={Custom.settingsborder}>
+              <Button
+                onPress={() => Navigation.push(props.componentId, {
+                  component: {
+                    name: 'BackupWallet',
+                    options: {
+                      topBar: {
+                        visible: false,
+                      }
+                    }
+                  }
+                })}
+                buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
+                <FontAwesomeIcon icon={faWallet} size={24} style={Custom.iconsetting} />
+                <Text style={[Fonts.regular, Custom.settingtitle]}>
+                  Backup Wallet
+                </Text>
+                <FontAwesomeIcon icon={faChevronRight} size={20} style={Custom.iconsettt} />
+              </Button>
+            </View>
+            <View style={Custom.settingsborder}>
+              <Button buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
+                <FontAwesomeIcon icon={faCode} size={24} style={Custom.iconsetting} />
+                <Text style={[Fonts.regular, Custom.settingtitle]}>
+                  Developer Mode
+                </Text>
+                <Switch
+                  value={checked}
+                  onValueChange={(value) => setChecked(value)}
+                  style={[Custom.postiotoggle,]}
+                  trackColor={{ true: '#04f76e', false: 'white' }}
+                  thumbColor='#FFF'
+
+                />
+              </Button>
+            </View>
+            <View style={Custom.settingsborder}>
+              <Button
+                onPress={() => Navigation.push(props.componentId, {
+                  component: {
+                    name: 'CreatenewPassword',
+                    options: {
+                      topBar: {
+                        visible: false,
+                      }
+                    }
+                  }
+                })}
+                buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
+                <FontAwesomeIcon icon={faEye} size={24} style={Custom.iconsetting} />
+                <Text style={[Fonts.regular, Custom.settingtitle]}>
+                  Change Password
+                </Text>
+                <FontAwesomeIcon icon={faChevronRight} size={20} style={Custom.iconsettt} />
+              </Button>
+            </View>
+            <View style={Custom.settingsborder}>
+              <Button buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
+                <FontAwesomeIcon icon={faLock} size={24} style={Custom.iconsetting} />
+                <Text style={[Fonts.regular, Custom.settingtitle]}>
+                  Lock
+                </Text>
+                <FontAwesomeIcon icon={faChevronRight} size={20} style={Custom.iconsettt} />
+              </Button>
+            </View>
           </View>
         </View>
-      </View>
       </SafeAreaView>
     </>
   );

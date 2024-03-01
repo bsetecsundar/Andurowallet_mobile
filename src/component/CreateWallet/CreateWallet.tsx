@@ -80,8 +80,14 @@ export function CreateWallet(props: any) {
             <Button size="lg"
               onPress={() => Navigation.push(props.componentId, {
                 component: {
-                  name: 'ImportWallet'
+                  name: 'ImportWallet',
+                  options:{
+                    topBar:{
+                      visible:false,
+                    }
+                  }
                 }
+                
               })}
               buttonStyle={{
                 backgroundColor: primary,

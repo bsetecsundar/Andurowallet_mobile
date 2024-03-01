@@ -15,56 +15,39 @@ import {
 import { Tab, Text, TabView, Input, Button } from '@rneui/themed';
 import Header from '../../UI/Header/Header';
 import Custom from '../../styles/Custom';
-import { gray, greylightwhite, primary, text } from '../../styles/Variables';
+import { black, gray, greylightwhite, primary, text } from '../../styles/Variables';
+import { Navigation } from 'react-native-navigation';
+import { NfttabList } from '../../UI/NfttabList/NfttabList';
+import { TokenTab } from '../../UI/TokenTab/TokenTab';
 
 
-export function NftTab(props: any): React.JSX.Element {
+export function NftTab(this:any, props: any): React.JSX.Element {
+  const [index, setIndex] = React.useState(0);
     return (
         <>
         <SafeAreaView>
         <View
     style={Custom.bgview}>
         <Header />
-        <View style={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
-            <View>
-            <Button size="lg" buttonStyle={{
-              backgroundColor: gray,
-              borderRadius: 4,
-              height:53,
-            }} titleStyle={{
-              color: text,
-              fontWeight: 'bold', fontSize: 18,
-            }} containerStyle={{
-              marginVertical: 10,
-              paddingTop:0,
-            }}>@</Button>
-            </View>
-            <View>
-            <Input
-                placeholder="New Password"
-                placeholderTextColor="#fff"
-                inputContainerStyle={{ borderBottomWidth: 0 }}
-                containerStyle={[{
-                  borderWidth: 2, height: 53, borderColor: greylightwhite, marginBottom: 8, borderRadius: 4, width: 250,
-                  marginTop: 8,
-                }]}
-                style={{ color: '#fff' }}
-              />
-            </View>
-            <View>
-            <Button size="lg" buttonStyle={{
-              backgroundColor: primary,
-              borderRadius: 4,
-            }} titleStyle={{
-              color: '#000',
-              fontWeight: 'bold', fontSize: 18,
-            }} containerStyle={{
-              marginVertical: 10,
-            }}>Create</Button>
-            </View>
-        </View>
+        <Tab value={index} onChange={setIndex} dense indicatorStyle={{
+        backgroundColor: 'white',
+        height: 2,
+      }}>
+        <Tab.Item titleStyle={{ color:primary }} >NFTs</Tab.Item>
+        <Tab.Item titleStyle={{ color:primary }}>Token</Tab.Item>
+      </Tab>
+      <TabView value={index} onChange={setIndex} animationType="spring">
+      <TabView.Item style={{ width: '100%' }}>
+      <NfttabList componentId={props.componentId}/>
+      </TabView.Item>
+      <TabView.Item style={{ width: '100%' }}>
+      <TokenTab componentId={props.componentId}/>
+      </TabView.Item>
+    </TabView>
+
     </View>
             </SafeAreaView>
+           
             </>
     );
 }

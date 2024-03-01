@@ -35,7 +35,7 @@ export function  GettingStart (props:any) {
             <Button size="lg"
             onPress={() => Navigation.push(props.componentId,{
               component:{
-                name:'NftTab',
+                name:'CreateWallet',
                 options:{
                   topBar:{
                     visible:false,

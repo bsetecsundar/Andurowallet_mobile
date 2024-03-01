@@ -84,6 +84,11 @@ export function Home(props: any): React.JSX.Element {
                   onPress={() => Navigation.push(props.componentId, {
                     component: {
                       name: 'Sendto',
+                      options:{
+                        topBar:{
+                          visible:false,
+                        }
+                      }
                     }
                   })}
                   buttonStyle={{
@@ -133,7 +138,11 @@ export function Home(props: any): React.JSX.Element {
               onPress={() => Navigation.push(props.componentId, {
                 component: {
                   name: 'Home',
-
+                  options:{
+                    topBar:{
+                      visible:false,
+                    }
+                  }
                 }
               })}>
               <View style={[Custom.dashboardlist]}>
@@ -162,6 +171,11 @@ export function Home(props: any): React.JSX.Element {
                 onPress={() => Navigation.push(props.componentId, {
                   component: {
                     name: 'Home',
+                    options:{
+                      topBar:{
+                        visible:false,
+                      }
+                    }
                   }
                 })}>
                 <View style={[Custom.dashboardlist]}>

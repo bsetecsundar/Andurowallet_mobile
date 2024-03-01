@@ -18,11 +18,16 @@ import { Home } from '../component/Home/Home';
 import { Send } from '../component/Send/Send';
 import { Sendto } from '../component/SendTo/SendTo';
 import { Receive } from '../component/receive/Receive';
-import { NftCreate } from '../component/NftCreate/NftCreate';
+import { NftCreate } from '../UI/NftCreate/NftCreate';
 import { Setting } from '../component/Settings/Setting';
 import { Nft } from '../component/Nft/Nft';
 import { NftTab } from '../component/NftTab/NftTab';
+import { BackupWallet } from '../component/Backupwallet/BackupWallet';
 import CreatenewPassword  from '../UI/CreatePassword/CreatenewPassword';
+import { NfttabList }  from '../UI/NfttabList/NfttabList';
+import { TokenTab }  from '../UI/TokenTab/TokenTab';
+import { ManageToken } from '../UI/ManageToken/ManageToken';
+import { black, white } from "../styles/Variables";
 
 
 Navigation.registerComponent('gettingStart', () => GettingStart);
@@ -41,7 +46,11 @@ Navigation.registerComponent('NftCreate',() => NftCreate);
 Navigation.registerComponent('Setting',() => Setting);
 Navigation.registerComponent('Nft',() => Nft);
 Navigation.registerComponent('NftTab',() => NftTab);
+Navigation.registerComponent('BackupWallet',() => BackupWallet);
 Navigation.registerComponent('CreatenewPassword',() => CreatenewPassword);
+Navigation.registerComponent('NfttabList',() => NfttabList);
+Navigation.registerComponent('ManageToken',() => ManageToken);
+Navigation.registerComponent('TokenTab',() => TokenTab);
 
 const gettingStart = {
   stack: {
@@ -65,6 +74,11 @@ const gettingStart = {
 const afterLogin = {
   root:{
     bottomTabs: {
+      options: {
+        bottomTabs: {
+          backgroundColor: '#626b72', 
+        },
+      },
     children: [
       {
         stack: {
@@ -72,14 +86,13 @@ const afterLogin = {
             {
               component: {
                 name: 'Dashboard',
-  
               },
             },
           ],
           options: {
             bottomTab: {
-              text: 'Dashboard',
               icon: require('../assets/images/home.png'),
+              textColor: 'white',
             },
             topBar: {
               visible: false,
@@ -92,14 +105,14 @@ const afterLogin = {
           children: [
             {
               component: {
-                name: 'Nft',
+                name: 'NftTab',
               },
             },
           ],
           options: {
             bottomTab: {
-              text: 'Nft',
-              icon: require('../assets/images/logo.png'),
+              icon: require('../assets/images/centernft.png'),
+              iconSize:300
             },
             topBar: {
               visible: false,
@@ -118,8 +131,8 @@ const afterLogin = {
           ],
           options: {
             bottomTab: {
-              text: 'Setting',
               icon: require('../assets/images/setting.png'),
+              textColor: 'white',
             },
             topBar: {
               visible: false,
