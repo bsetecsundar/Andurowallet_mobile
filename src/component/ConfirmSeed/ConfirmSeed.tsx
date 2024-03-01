@@ -8,6 +8,7 @@
 import React from 'react';
 import {
   Image,
+  SafeAreaView,
   ScrollView,
   Text,
   View,
@@ -16,18 +17,21 @@ import { Button } from '../../../node_modules/@rneui/themed';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import Custom from '../../../src/styles/Custom';
+import { Navigation } from 'react-native-navigation';
+import route from '../../Route/Route';
 
 
-function ConfirmSeed(): React.JSX.Element {
+export function ConfirmSeed(props:any): React.JSX.Element {
 
   return (
+    <SafeAreaView >
     <ScrollView>
       <View style={Custom.bgview}>
 
         <View style={Custom.dflx}>
           <View>
             <View style={Custom.logotext}>
-              <Image source={require('./src/assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
+              <Image source={require('../../assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
             </View>
             <View>
               <Text style={Custom.gettingpara}>
@@ -79,15 +83,27 @@ function ConfirmSeed(): React.JSX.Element {
                 </View>
               </View>
               <View style={[Custom.dflxremind]} >
-                <Button size="lg" buttonStyle={{
-                  backgroundColor: '#04f76e',
-                  borderRadius: 4,
-                }} titleStyle={{
-                  color: '#000',
-                  fontWeight: 'bold', fontSize: 18,
-                }} containerStyle={{
-                  marginVertical: 10,
-                }}>Confirm</Button>
+                <Button size="lg"
+                  // onPress={() => Navigation.push(props.componentId, {
+                  //   component: {
+                  //     name: 'Dashboard',
+                  //     options:{
+                  //       topBar:{
+                  //         visible:false,
+                  //       }
+                  //     }
+                  //   }
+                  // })}
+                  onPress={() => Navigation.setRoot(route.afterLogin)}
+                  buttonStyle={{
+                    backgroundColor: '#04f76e',
+                    borderRadius: 4,
+                  }} titleStyle={{
+                    color: '#000',
+                    fontWeight: 'bold', fontSize: 18,
+                  }} containerStyle={{
+                    marginVertical: 10,
+                  }}>Confirm</Button>
               </View>
 
             </View>
@@ -96,8 +112,6 @@ function ConfirmSeed(): React.JSX.Element {
 
       </View>
     </ScrollView>
+    </SafeAreaView>
   );
 }
-
-
-export default ConfirmSeed;

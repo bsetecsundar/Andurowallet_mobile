@@ -111,6 +111,10 @@ export default StyleSheet.create({
         paddingLeft: 16,
         paddingRight: 16,
       },
+      dashpaddrightleft:{
+        paddingLeft: 16,
+        paddingRight: 16,
+      },
       dashboardtitle: {
         fontSize: 30,
         color: text,
@@ -122,7 +126,6 @@ export default StyleSheet.create({
         color: text,
         paddingBottom: 8,
         width: 255,
-        marginLeft: 'auto',
         marginRight: 'auto'
       },
       dflxdash:{
@@ -321,7 +324,7 @@ export default StyleSheet.create({
       },
       dashboardbtc:{
         color:greyHiglight,
-        fontSize:17,
+        fontSize:16,
       },
       btcoindash:{
         color:greyHiglight,
@@ -409,5 +412,11 @@ export default StyleSheet.create({
         textAlign: 'center',
         backgroundColor:gray,
         padding:13
+      },
+      nftcreatinput:{
+        marginTop:22
+      },
+      nftcreaet:{
+        display:'flex',
       }
 });

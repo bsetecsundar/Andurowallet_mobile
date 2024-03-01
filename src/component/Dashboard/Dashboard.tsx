@@ -8,6 +8,8 @@
 import React from 'react';
 import {
   Image,
+  Pressable,
+  SafeAreaView,
   Text,
   View,
 } from 'react-native';
@@ -15,13 +17,17 @@ import { Button } from '@rneui/themed';
 import { greyHiglight,primary, } from '../../../src/styles/Variables';
 import Fonts from '../../../src/styles/Fonts';
 import Custom from '../../../src/styles/Custom';
+import { Navigation } from 'react-native-navigation';
+import Header from '../../UI/Header/Header';
 
-function ImportWallet(): React.JSX.Element {
-
+export function Dashboard(props:any): React.JSX.Element {
+  
   return (
     <>
+    <SafeAreaView>
       <View style={Custom.bgview}>
-        <View style={Custom.dflxstart}>
+        <Header/>
+        <View style={Custom.dashpaddrightleft}>
           <View>
             <View>
               <Text style={[Custom.dashboardtitle, Fonts.medium]}>
@@ -43,7 +49,7 @@ function ImportWallet(): React.JSX.Element {
                   }} containerStyle={{
                     marginVertical: 10,
                     paddingRight:22
-                  }}><Image source={require('./src/assets/images/up-send-arrow.png')}
+                  }}><Image source={require('../../assets/images/up-send-arrow.png')}
                     /></Button>
                   <Text style={[Custom.sendtext]}>Send</Text>
                 </View>
@@ -59,7 +65,7 @@ function ImportWallet(): React.JSX.Element {
                   }} containerStyle={{
                     marginVertical: 10,
  
-                  }}><Image source={require('./src/assets/images/down-receive-arrow.png')} /></Button>
+                  }}><Image source={require('../../assets/images/down-receive-arrow.png')} /></Button>
                   <Text style={[Custom.sendtext]}>Receive</Text>
                 </View>
               </View>
@@ -67,10 +73,16 @@ function ImportWallet(): React.JSX.Element {
           </View>
           <View>
           <View>
+          <Pressable
+            onPress={() => Navigation.push(props.componentId,{
+              component:{
+                name:'Home',
+              }
+            })}>
             <View style={[Custom.dashboardlist]}>
               <View style={[Custom.dashboradlistflx]}>
                 <View>
-                <Image source={require('./src/assets/images/bitcoin-main.png')} 
+                <Image source={require('../../assets/images/bitcoin-main.png')} 
                 style={[Custom.logoimg, { width: 45, resizeMode: 'contain',marginRight:14, }]} />
                 </View>
                 <View>
@@ -87,12 +99,24 @@ function ImportWallet(): React.JSX.Element {
                 <Text style={[Fonts.Light,{color:greyHiglight,fontSize:16}]}>$0.00 USD</Text>
               </View>
             </View>
+            </Pressable>
           </View>
           <View>
+          <Pressable
+            onPress={() => Navigation.push(props.componentId,{
+              component:{
+                name:'Home',
+                options:{
+                  topBar:{
+                    visible:false,
+                  }
+                }
+              }
+            })}>
             <View style={[Custom.dashboardlist]}>
               <View style={[Custom.dashboradlistflx]}>
                 <View>
-                <Image source={require('./src/assets/images/bitcoin.png')} 
+                <Image source={require('../../assets/images/bitcoin-main.png')} 
                 style={[Custom.logoimg, { width: 45, resizeMode: 'contain',marginRight:14, }]} />
                 </View>
                 <View>
@@ -109,13 +133,13 @@ function ImportWallet(): React.JSX.Element {
                 <Text style={[Fonts.Light,{color:greyHiglight,fontSize:16}]}>$0.00 USD</Text>
               </View>
             </View>
+            </Pressable>
           </View>
         </View>
         </View>
+        
       </View>
+      </SafeAreaView>
       </>
   );
 }
-
-
-export default ImportWallet;

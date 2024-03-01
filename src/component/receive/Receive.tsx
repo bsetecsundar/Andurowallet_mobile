@@ -8,6 +8,7 @@
 import React from 'react';
 import {
   Image,
+  SafeAreaView,
   Text,
   View,
 } from 'react-native';
@@ -17,19 +18,23 @@ import Custom from '../../../src/styles/Custom';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faClipboard } from '@fortawesome/free-regular-svg-icons/faClipboard';
 
-function CreateWallet(): React.JSX.Element {
+export function Receive(): React.JSX.Element {
 
   return (
+    <SafeAreaView>
     <View style={Custom.bgview}>
       <View style={Custom.dflx}>
         <View>
           <View style={Custom.logotextbtm}>
-            <Image source={require('./src/assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
+            <Image source={require('../../assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
+            <Text style={Custom.gettingpara}>
+                Confirm seed phrase
+              </Text>
           </View>
           <View style={Custom.creaeborder}>
             <View style={Custom.fontplus}>
               <View>
-                <Image source={require('./src/assets/images/qr-code.png')} style={[Custom.logoimg, { width: 150, resizeMode: 'contain', }]} />
+                <Image source={require('../../assets/images/qr-code.png')} style={[Custom.logoimg, { width: 150, resizeMode: 'contain', }]} />
               </View>
               <Text style={Custom.receivedaddress}>
               bc1q3ydwtpxw94x5c2jsh9d7upnshpl82j7s5zxmzg
@@ -37,21 +42,9 @@ function CreateWallet(): React.JSX.Element {
               <FontAwesomeIcon icon={faClipboard} size={24} style={Custom.receiveclip}/>
             </View>
           </View>
-          <View style={[Custom.dflxremind]} >
-            <Button size="lg" buttonStyle={{
-              backgroundColor: primary,
-              borderRadius: 4,
-            }} titleStyle={{
-              color: black,
-              fontWeight: 'bold', fontSize: 18,
-            }} containerStyle={{
-              marginVertical: 10,
-            }}>Close</Button>
-          </View>
         </View>
       </View>
     </View>
+    </SafeAreaView>
   );
 }
-
-export default CreateWallet;

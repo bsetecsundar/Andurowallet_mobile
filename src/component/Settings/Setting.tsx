@@ -8,6 +8,7 @@
 import React, { useState } from 'react';
 import {
   Image,
+  SafeAreaView,
   Text,
   View,
 } from 'react-native';
@@ -22,7 +23,7 @@ import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
 import { faLock } from '@fortawesome/free-solid-svg-icons/faLock';
 import { faEye } from '@fortawesome/free-solid-svg-icons/faEye';
 
-function ImportWallet(): React.JSX.Element {
+export function Setting(): React.JSX.Element {
     const [checked, setChecked] = useState(false);
     
     const toggleSwitch = () => {
@@ -30,9 +31,9 @@ function ImportWallet(): React.JSX.Element {
     };
   return (
     <>
+    <SafeAreaView>
       <View style={Custom.bgview}>
         <View>
-
           <View style={Custom.settingsborder}>
             <Button buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
               <FontAwesomeIcon icon={faWallet} size={24} style={Custom.iconsetting} />
@@ -78,9 +79,7 @@ function ImportWallet(): React.JSX.Element {
           </View>
         </View>
       </View>
+      </SafeAreaView>
     </>
   );
 }
-
-
-export default ImportWallet;

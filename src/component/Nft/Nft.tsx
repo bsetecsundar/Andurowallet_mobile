@@ -17,7 +17,7 @@ import { black, primary, } from '../../../src/styles/Variables';
 import Custom from '../../../src/styles/Custom';
 
 
-export function Greating(): React.JSX.Element {
+export function Nft(): React.JSX.Element {
 
   return (
     <SafeAreaView>

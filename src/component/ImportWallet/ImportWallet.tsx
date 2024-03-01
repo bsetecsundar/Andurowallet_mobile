@@ -8,6 +8,7 @@
 import React from 'react';
 import {
   Image,
+  SafeAreaView,
   Text,
   View,
 } from 'react-native';
@@ -16,14 +17,15 @@ import { Input } from '@rneui/base';
 import { primary, white } from '../../../src/styles/Variables';
 import Custom from '../../../src/styles/Custom';
 
-function ImportWallet(): React.JSX.Element {
+export function ImportWallet(): React.JSX.Element {
 
   return (
+    <SafeAreaView>
     <View style={Custom.bgview}>
       <View style={Custom.dflx}>
         <View>
           <View style={Custom.logotext}>
-            <Image source={require('./src/assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
+            <Image source={require('../../assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
           </View>
           <View>
             <Text style={Custom.gettingpara}>
@@ -33,6 +35,18 @@ function ImportWallet(): React.JSX.Element {
           Only the first account on this wallet will auto load. After completing this process,
               to add additional accounts, click the drop down menu, then select Create Account
           </Text>
+          <View>
+          <Input
+                placeholder="Type or Paste your mnemonic secret phrase"
+                placeholderTextColor="#fff"
+                inputContainerStyle={{ borderBottomWidth: 0 }}
+                containerStyle={[{
+                  borderWidth: 2, height: 120, borderColor: '#eaf2e033', marginBottom: 8, borderRadius: 4, width: 250,
+                  marginTop: 8,
+                }]}
+                style={{color:white}}
+              />
+          </View>
           <View style={Custom.inputflx}>
               <Input
                 placeholder="New Password"
@@ -67,7 +81,6 @@ function ImportWallet(): React.JSX.Element {
         </View>
       </View>
     </View>
+    </SafeAreaView>
   );
 }
-
-export default ImportWallet;

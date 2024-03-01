@@ -8,6 +8,7 @@
 import React from 'react';
 import {
   Image,
+  SafeAreaView,
   Text,
   View,
 } from 'react-native';
@@ -17,25 +18,26 @@ import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons/faCircleE
 
 function Header(): React.JSX.Element {
   return (
-    <View style={Custom.bgview}>
+      <>
+      <SafeAreaView>
       <View style={Custom.headerflx}>
-        <View >
-          <View style={Custom.logotext}>
-            <Image source={require('./src/assets/images/small_logo.png')} style={[Custom.logoimg, { width: 160, resizeMode: 'contain', }]} />
-          </View>
+      <View>
+        <View style={Custom.logotext}>
+          <Image source={require('../../assets/images/small_logo.png')} style={[Custom.logoimg, { width: 160, resizeMode: 'contain', }]} />
         </View>
       </View>
-      <View style={Custom.setpasswordheder}>
-      <View>
-      <Text style={Custom.headertool}>
-        Set your password 
-        </Text>
+    </View><View style={Custom.setpasswordheder}>
+        <View>
+          <Text style={Custom.headertool}>
+            Set your password
+          </Text>
+        </View>
+        <View>
+          <FontAwesomeIcon color='white' size={22} icon={faCircleExclamation} />
+        </View>
       </View>
-      <View>
-      <FontAwesomeIcon color='white' size={22} icon={faCircleExclamation} />
-      </View>
-      </View>
-    </View>
+      </SafeAreaView>
+      </>
   );
 }
 
