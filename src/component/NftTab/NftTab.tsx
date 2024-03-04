@@ -29,7 +29,7 @@ export function NftTab(this:any, props: any): React.JSX.Element {
         <View
     style={Custom.bgview}>
         <Header />
-        <Tab value={index} onChange={setIndex} dense indicatorStyle={{
+        <Tab value={index} onChange={setIndex} dense style={{paddingTop:8,paddingBottom:8}} indicatorStyle={{
         backgroundColor: 'white',
         height: 2,
       }}>

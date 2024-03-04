@@ -14,11 +14,12 @@ import {
     View,
 } from 'react-native';
 import { Button, Input, Switch } from '@rneui/themed';
-import { gray, greyHiglight, greylightwhite, primary, text, white, } from '../../../src/styles/Variables';
+import { black, gray, greyHiglight, greylightwhite, primary, text, white, } from '../../../src/styles/Variables';
 import Fonts from '../../../src/styles/Fonts';
 import Custom from '../../../src/styles/Custom';
 import { Navigation } from 'react-native-navigation';
 import Header from '../../UI/Header/Header';
+import { ScrollView } from 'react-native';
 
 export function ManageToken(props: any): React.JSX.Element {
     const [checked, setChecked] = useState(false);
@@ -29,6 +30,7 @@ export function ManageToken(props: any): React.JSX.Element {
     return (
         <>
             <SafeAreaView>
+
                 <View style={Custom.bgview}>
                     <Header />
                     <View style={Custom.dashpaddrightleft}>
@@ -46,11 +48,11 @@ export function ManageToken(props: any): React.JSX.Element {
                                 })}
                                 buttonStyle={{
                                     backgroundColor: primary,
-                                    borderRadius: 4,
+                                    borderRadius: 8,
                                     width: 100
                                 }} titleStyle={{
-                                    color: white,
-                                    fontWeight: "500", fontSize: 18,
+                                    color: black,
+                                    fontWeight: "700", fontSize: 18,
                                 }} containerStyle={{
                                     marginVertical: 10,
                                     marginLeft: 'auto'
@@ -172,6 +174,7 @@ export function ManageToken(props: any): React.JSX.Element {
                     </View>
 
                 </View>
+                
             </SafeAreaView>
         </>
     );

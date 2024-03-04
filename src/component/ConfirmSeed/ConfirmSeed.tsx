@@ -34,7 +34,7 @@ export function ConfirmSeed(props:any): React.JSX.Element {
               <Image source={require('../../assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
             </View>
             <View>
-              <Text style={Custom.gettingpara}>
+              <Text style={Custom.setupseed}>
                 Confirm seed phrase
               </Text>
               <Text style={[Custom.importwalletpara]}>
@@ -97,7 +97,7 @@ export function ConfirmSeed(props:any): React.JSX.Element {
                   onPress={() => Navigation.setRoot(route.afterLogin)}
                   buttonStyle={{
                     backgroundColor: '#04f76e',
-                    borderRadius: 4,
+                    borderRadius: 8,
                   }} titleStyle={{
                     color: '#000',
                     fontWeight: 'bold', fontSize: 18,

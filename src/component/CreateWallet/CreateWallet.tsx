@@ -62,7 +62,7 @@ export function CreateWallet(props: any) {
               })}
               buttonStyle={{
                 backgroundColor: primary,
-                borderRadius: 4,
+                borderRadius: 8,
               }} titleStyle={{
                 color: black,
                 fontWeight: 'bold', fontSize: 18,
@@ -70,8 +70,8 @@ export function CreateWallet(props: any) {
           </View>
           <View style={Custom.creaeborder}>
             <View style={Custom.fontplus}>
-              <View style={Custom.borderplus}>
-                <FontAwesomeIcon icon={faDownload} style={Custom.faplusicon} />
+              <View style={[Custom.borderplus,{borderWidth:0}]}>
+                <FontAwesomeIcon icon={faDownload} size={20} style={Custom.faplusicon} />
               </View>
               <Text style={Custom.titlepara}>
                 Have a seed phrase?
@@ -91,7 +91,7 @@ export function CreateWallet(props: any) {
               })}
               buttonStyle={{
                 backgroundColor: primary,
-                borderRadius: 4,
+                borderRadius: 8,
               }} titleStyle={{
                 color: black,
                 fontWeight: 'bold', fontSize: 18,

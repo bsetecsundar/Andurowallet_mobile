@@ -40,7 +40,7 @@ export function Greating(): React.JSX.Element {
           <View style={[Custom.dflxremind]} >
             <Button size="lg" buttonStyle={{
               backgroundColor: primary,
-              borderRadius: 4,
+              borderRadius: 8,
             }} titleStyle={{
               color: black,
               fontWeight: 'bold', fontSize: 18,

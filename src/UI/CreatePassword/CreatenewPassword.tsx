@@ -29,33 +29,33 @@ function CreatenewPassword(prop:any): React.JSX.Element {
             <Image source={require('../../assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
           </View>
           <View>
-            <Text style={Custom.createtitle}>
+            <Text style={Custom.headertitle}>
               Create New Password
             </Text>
             <View style={Custom.inputflx}>
               <Input
                 placeholder="New Password"
-                placeholderTextColor="#fff"
+                placeholderTextColor="#f2eae1"
                 inputContainerStyle={{ borderBottomWidth: 0 }}
                 containerStyle={[{
-                  borderWidth: 2, height: 50, borderColor: greylightwhite, marginBottom: 8, borderRadius: 4, width: 250,
-                  marginTop: 8,
+                  borderWidth: 2, height: 56, borderColor: greylightwhite, marginBottom: 12, borderRadius: 6, width: 250,
+                  marginTop: 8,paddingTop:1
                 }]}
-                style={{ color: '#fff' }}
+                style={{ color: '#f2eae1' }}
               />
               <Input
                 placeholder="Confirm Password"
-                placeholderTextColor="#fff"
+                placeholderTextColor="#f2eae1"
                 containerStyle={[{
-                  borderWidth: 2, height: 50, borderColor: greylightwhite, marginBottom: 8, borderRadius: 4, width: 250,
+                  borderWidth: 2, height: 56, borderColor: greylightwhite, marginBottom: 8, borderRadius: 6, width: 250,paddingTop:1
                 }]}
                 inputContainerStyle={{ borderBottomWidth: 0, }}
-                style={{ color: '#fff' }}
+                style={{ color: '#f2eae1' }}
               />
             </View>
             <Button size="lg" buttonStyle={{
               backgroundColor: primary,
-              borderRadius: 4,
+              borderRadius: 8,
             }} titleStyle={{
               color: '#000',
               fontWeight: 'bold', fontSize: 18,

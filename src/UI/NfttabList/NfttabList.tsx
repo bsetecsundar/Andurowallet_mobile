@@ -80,15 +80,15 @@ export function NfttabList(this:any, props: any): React.JSX.Element {
                             </View>
                         </View>
                         <View>
-                            <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: 20, }}>
+                            <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', marginTop: 10, }}>
                                 <View style={[{ position: 'relative', flex: 1, marginLeft:10,marginRight:10 }]}>
                                     <Image source={require('../../assets/images/solana1.jpg')} style={[{ width: "100%", height: 190, marginTop: 14 }]} />
                                     <View style={{
                                         position: 'absolute', bottom: -1, left: 0, backgroundColor: 'rgba(0, 0, 0, 0.5)',
                                         width: "100%"
                                     }}>
-                                        <Text style={{ fontSize: 14, color: white, fontWeight: '800', paddingTop: 10, paddingBottom: 4, paddingLeft: 6 }}>#1</Text>
-                                        <Text style={{ fontSize: 14, color: white, fontWeight: '800', paddingBottom: 4, paddingLeft: 6 }}>AssetID: 1</Text>
+                                        <Text style={{ fontSize: 16, color: white, fontWeight: '800', paddingTop: 10, paddingBottom: 4, paddingLeft: 6 }}>#1</Text>
+                                        <Text style={{ fontSize: 16, color: white, fontWeight: '800', paddingBottom: 4, paddingLeft: 6 }}>AssetID: 1</Text>
                                     </View>
                                 </View>
                                 <View style={[{ position: 'relative', flex: 1,marginLeft:10,marginRight:10 }]}>
@@ -97,8 +97,8 @@ export function NfttabList(this:any, props: any): React.JSX.Element {
                                         position: 'absolute', bottom: -1, left: 0, backgroundColor: 'rgba(0, 0, 0, 0.5)',
                                         width: "100%"
                                     }}>
-                                        <Text style={{ fontSize: 14, color: white, fontWeight: '800', paddingTop: 10, paddingBottom: 4, paddingLeft: 6 }}>#2</Text>
-                                        <Text style={{ fontSize: 14, color: white, fontWeight: '800', paddingBottom: 4, paddingLeft: 6 }}>AssetID: 2</Text>
+                                        <Text style={{ fontSize: 16, color: white, fontWeight: '800', paddingTop: 10, paddingBottom: 4, paddingLeft: 6 }}>#2</Text>
+                                        <Text style={{ fontSize: 16, color: white, fontWeight: '800', paddingBottom: 4, paddingLeft: 6 }}>AssetID: 2</Text>
                                     </View>
                                 </View>
                             </View>
@@ -109,8 +109,8 @@ export function NfttabList(this:any, props: any): React.JSX.Element {
                                         position: 'absolute', bottom: -1, left: 0, backgroundColor: 'rgba(0, 0, 0, 0.5)',
                                         width: "100%"
                                     }}>
-                                        <Text style={{ fontSize: 14, color: white, fontWeight: '800', paddingTop: 10, paddingBottom: 4, paddingLeft: 6 }}>#1</Text>
-                                        <Text style={{ fontSize: 14, color: white, fontWeight: '800', paddingBottom: 4, paddingLeft: 6 }}>AssetID: 1</Text>
+                                        <Text style={{ fontSize: 16, color: white, fontWeight: '800', paddingTop: 10, paddingBottom: 4, paddingLeft: 6 }}>#3</Text>
+                                        <Text style={{ fontSize: 16, color: white, fontWeight: '800', paddingBottom: 4, paddingLeft: 6 }}>AssetID: 3</Text>
                                     </View>
                                 </View>
                                 <View style={[{ position: 'relative', flex: 1, marginLeft:10,marginRight:10 }]}>
@@ -119,8 +119,8 @@ export function NfttabList(this:any, props: any): React.JSX.Element {
                                         position: 'absolute', bottom: -1, left: 0, backgroundColor: 'rgba(0, 0, 0, 0.5)',
                                         width: "100%"
                                     }}>
-                                        <Text style={{ fontSize: 14, color: white, fontWeight: '800', paddingTop: 10, paddingBottom: 4, paddingLeft: 6 }}>#2</Text>
-                                        <Text style={{ fontSize: 14, color: white, fontWeight: '800', paddingBottom: 4, paddingLeft: 6 }}>AssetID: 2</Text>
+                                        <Text style={{ fontSize: 16, color: white, fontWeight: '800', paddingTop: 10, paddingBottom: 4, paddingLeft: 6 }}>#4</Text>
+                                        <Text style={{ fontSize: 16, color: white, fontWeight: '800', paddingBottom: 4, paddingLeft: 6 }}>AssetID: 4</Text>
                                     </View>
                                 </View>
                             </View>

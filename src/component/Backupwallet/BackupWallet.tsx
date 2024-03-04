@@ -19,81 +19,52 @@ import Custom from '../../../src/styles/Custom';
 
 
 
-export function BackupWallet(): React.JSX.Element {
+export function BackupWallet() {
+  const backupwallet = [
+    'arrange', 'calds', 'dog', 'cat', 'viwe', 'sun', 'arrange', 'arrange', 'arrange', 'arrange', 'arrange','arrange'
+  ]
+
 
   return (
     <SafeAreaView>
-    <View style={Custom.bgview}>
-      <View style={Custom.dflx}>
-        <View>
-          <View style={Custom.logotext}>
-            <Image source={require('../../assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
-          </View>
+      <View style={Custom.bgview}>
+        <View style={Custom.dflx}>
           <View>
-            <Text style={Custom.gettingpara}>
-            Backup Wallet
-            </Text>
-            <Text style={[Custom.importwalletpara]}>
-            Write down your seed phrase and make sure to keep it private. This is the unique key to your wallet.
-          </Text>
-          <Text style={[Custom.importwalletpara]}>
-          Seed phrase
-          </Text>
-          <View style={[Custom.creaebordertopback]}>
-          <View style={[Custom.setupflxbox]}>
-            <View style={[Custom.setupbox]}>
-            <Text style={{color:'white',fontSize:16,}}>arrange</Text>
+            <View style={Custom.logotext}>
+              <Image source={require('../../assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
             </View>
-            <View style={[Custom.setupbox]}>
-            <Text style={{color:'white'}}>clarify</Text>
+            <View>
+              <Text style={Custom.headertitle}>
+                Backup Wallet
+              </Text>
+              <Text style={[Custom.importwalletpara]}>
+                Write down your seed phrase and make sure to keep it private. This is the unique key to your wallet.
+              </Text>
+              <Text style={[Custom.importwalletpara]}>
+                Seed phrase
+              </Text>
+              <View style={[Custom.creaebordertopback]}>
+                {backupwallet.map((item: any, index: any) => {
+                  return (
+                    <Text style={{ color: 'white', fontSize: 16, padding: 8, }} key={`key_${item}_${index}`}>{`${index + 1}.${item}`}</Text>
+                  );
+                })}
+                <View style={[Custom.dflxremindabsolut]} >
+                  <Button size="lg" buttonStyle={{
+                    backgroundColor: '#04f76e',
+                    borderRadius: 4,
+                  }} titleStyle={{
+                    color: '#000',
+                    fontWeight: 'bold', fontSize: 18,
+                  }} containerStyle={{
+                    marginVertical: 10,
+                  }}><FontAwesomeIcon icon={faEye} /> Show</Button>
+                </View>
+              </View>
             </View>
-            <View style={[Custom.setupbox]}>
-            <Text style={{color:'white',fontSize:16,}}>merry</Text>
-            </View>
-            <View style={[Custom.setupbox]}>
-            <Text style={{color:'white',fontSize:16,}}>paddle</Text>
-            </View>
-            <View style={[Custom.setupbox]}>
-            <Text style={{color:'white',fontSize:16,}}>mind</Text>
-            </View>
-            <View style={[Custom.setupbox]}>
-            <Text style={{color:'white',fontSize:16,}}>possible</Text>
-            </View>
-            <View style={[Custom.setupbox]}>
-            <Text style={{color:'white',fontSize:16,}}>estate</Text>
-            </View>
-            <View style={[Custom.setupbox]}>
-            <Text style={{color:'white',fontSize:16,}}>glimpse</Text>
-            </View>
-            <View style={[Custom.setupbox]}>
-            <Text style={{color:'white',fontSize:16,}}>bracket</Text>
-            </View>
-            <View style={[Custom.setupbox]}>
-            <Text style={{color:'white',fontSize:16,}}>estate</Text>
-            </View>
-            <View style={[Custom.setupbox]}>
-            <Text style={{color:'white',fontSize:16,}}>need</Text>
-            </View>
-            <View style={[Custom.setupbox]}>
-            <Text style={{color:'white',fontSize:16,}}>nuclear</Text>
-            </View>
-          </View>
-          <View style={[Custom.dflxremindabsolut]} >
-            <Button size="lg" buttonStyle={{
-              backgroundColor: '#04f76e',
-              borderRadius: 4,
-            }} titleStyle={{
-              color: '#000',
-              fontWeight: 'bold', fontSize: 18,
-            }} containerStyle={{
-              marginVertical: 10,
-            }}><FontAwesomeIcon icon={faEye} /> Show</Button>
-          </View>
-          </View>
           </View>
         </View>
       </View>
-    </View>
     </SafeAreaView>
   );
 }

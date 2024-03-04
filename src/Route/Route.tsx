@@ -27,6 +27,7 @@ import CreatenewPassword  from '../UI/CreatePassword/CreatenewPassword';
 import { NfttabList }  from '../UI/NfttabList/NfttabList';
 import { TokenTab }  from '../UI/TokenTab/TokenTab';
 import { ManageToken } from '../UI/ManageToken/ManageToken';
+import { TestnetList } from '../UI/TestnetList/TestnetList';
 import { black, white } from "../styles/Variables";
 
 
@@ -51,6 +52,7 @@ Navigation.registerComponent('CreatenewPassword',() => CreatenewPassword);
 Navigation.registerComponent('NfttabList',() => NfttabList);
 Navigation.registerComponent('ManageToken',() => ManageToken);
 Navigation.registerComponent('TokenTab',() => TokenTab);
+Navigation.registerComponent('TestnetList',() => TestnetList);
 
 const gettingStart = {
   stack: {
@@ -76,7 +78,7 @@ const afterLogin = {
     bottomTabs: {
       options: {
         bottomTabs: {
-          backgroundColor: '#626b72', 
+          backgroundColor: '#626b72',
         },
       },
     children: [
@@ -112,7 +114,6 @@ const afterLogin = {
           options: {
             bottomTab: {
               icon: require('../assets/images/centernft.png'),
-              iconSize:300
             },
             topBar: {
               visible: false,

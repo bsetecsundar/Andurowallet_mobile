@@ -27,8 +27,8 @@ export function Receive(): React.JSX.Element {
         <View>
           <View style={Custom.logotextbtm}>
             <Image source={require('../../assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
-            <Text style={Custom.gettingpara}>
-                Confirm seed phrase
+            <Text style={Custom.headertitle}>
+            Receive Address
               </Text>
           </View>
           <View style={Custom.creaeborder}>
