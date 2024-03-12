@@ -23,6 +23,7 @@ import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
 import { faLock } from '@fortawesome/free-solid-svg-icons/faLock';
 import { faEye } from '@fortawesome/free-solid-svg-icons/faEye';
 import { Navigation } from 'react-native-navigation';
+import Header from '../../UI/Header/Header';
 
 export function Setting(props: any): React.JSX.Element {
   const [checked, setChecked] = useState(false);
@@ -34,6 +35,7 @@ export function Setting(props: any): React.JSX.Element {
     <>
       <SafeAreaView>
         <View style={Custom.bgview}>
+          <Header />
           <View>
             <View style={Custom.settingsborder}>
               <Button
@@ -43,13 +45,15 @@ export function Setting(props: any): React.JSX.Element {
                     options: {
                       topBar: {
                         visible: false,
+                      }, bottomTabs: {
+                        visible: false,
                       }
                     }
                   }
                 })}
                 buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
                 <FontAwesomeIcon icon={faWallet} size={24} style={Custom.iconsetting} />
-                <Text style={[Fonts.regular, Custom.settingtitle]}>
+                <Text style={[Fonts.medium, Custom.settingtitle]}>
                   Backup Wallet
                 </Text>
                 <FontAwesomeIcon icon={faChevronRight} size={20} style={Custom.iconsettt} />
@@ -58,7 +62,7 @@ export function Setting(props: any): React.JSX.Element {
             <View style={Custom.settingsborder}>
               <Button buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
                 <FontAwesomeIcon icon={faCode} size={24} style={Custom.iconsetting} />
-                <Text style={[Fonts.regular, Custom.settingtitle]}>
+                <Text style={[Fonts.medium, Custom.settingtitle]}>
                   Developer Mode
                 </Text>
                 <Switch
@@ -79,22 +83,39 @@ export function Setting(props: any): React.JSX.Element {
                     options: {
                       topBar: {
                         visible: false,
+                      },
+                      bottomTabs: {
+                        visible: false,
                       }
                     }
                   }
                 })}
                 buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
                 <FontAwesomeIcon icon={faEye} size={24} style={Custom.iconsetting} />
-                <Text style={[Fonts.regular, Custom.settingtitle]}>
+                <Text style={[Fonts.medium, Custom.settingtitle]}>
                   Change Password
                 </Text>
                 <FontAwesomeIcon icon={faChevronRight} size={20} style={Custom.iconsettt} />
               </Button>
             </View>
             <View style={Custom.settingsborder}>
-              <Button buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
+              <Button
+                onPress={() => Navigation.push(props.componentId, {
+                  component: {
+                    name: 'Login',
+                    options: {
+                      topBar: {
+                        visible: false,
+                      },
+                      bottomTabs: {
+                        visible: false,
+                      }
+                    }
+                  }
+                })}
+                buttonStyle={{ justifyContent: 'flex-start', position: 'relative', backgroundColor: 'transparent', }}>
                 <FontAwesomeIcon icon={faLock} size={24} style={Custom.iconsetting} />
-                <Text style={[Fonts.regular, Custom.settingtitle]}>
+                <Text style={[Fonts.medium, Custom.settingtitle]}>
                   Lock
                 </Text>
                 <FontAwesomeIcon icon={faChevronRight} size={20} style={Custom.iconsettt} />

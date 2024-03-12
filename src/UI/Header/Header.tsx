@@ -19,7 +19,9 @@ import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons/faCircleE
 function Header(): React.JSX.Element {
   return (
       <>
+
       <SafeAreaView>
+      
       <View style={Custom.headerflx}>
       <View>
         <View style={Custom.logotext}>

@@ -13,11 +13,13 @@ import {
   View,
 } from 'react-native';
 import { Button } from '@rneui/themed';
-import { primary,black } from '../../../src/styles/Variables';
+import { primary,black, bold } from '../../../src/styles/Variables';
 import Custom from '../../../src/styles/Custom';
 import { Navigation } from 'react-native-navigation';
 import LinearGradient from 'react-native-linear-gradient';
 import { StyleSheet } from 'react-native';
+import { fonts } from '@rneui/base';
+import Fonts from '../../styles/Fonts';
 
 export function  GettingStart (props:any) {
 
@@ -26,11 +28,11 @@ export function  GettingStart (props:any) {
     <View
     style={Custom.bgview}>
       <View style={Custom.dflx}>
-        <View>
+        <View style={{paddingLeft:12,paddingRight:12}}> 
           <View style={Custom.logotextbtm}>
-            <Image source={require('../../assets/images/logo.png')} style={[Custom.logoimgget,]} />
+            <Image source={require('../../assets/images/small_logo.png')} style={[Custom.logoimgget,]} />
           </View>
-          <Text style={Custom.startget}>
+          <Text style={[Custom.startget,Fonts.Light,{paddingLeft:16,paddingRight:16,}]}>
             Your connection to next-generation Bitcoin applications
           </Text>
           <View>
@@ -49,11 +51,14 @@ export function  GettingStart (props:any) {
               backgroundColor: primary,
               borderRadius: 8,
             }} titleStyle={{
-              color: black,
-              fontWeight: 'bold', fontSize: 18,
+              color: black, fontSize: 18,
+              paddingLeft:16,paddingRight:16,
+              fontWeight:'700',
+              fontFamily: "NunitoSans-bold",
             }}>Start</Button>
           </View>
         </View>
+        
       </View>
     </View>
     </SafeAreaView>

@@ -3,6 +3,7 @@ import { background, gray, greyHiglight, greylightwhite, text, white, } from "./
 export default StyleSheet.create({
   body: {
     color: text,
+    fontFamily: "NunitoSans-Medium",
   },
   bgview: {
     backgroundColor: background,
@@ -13,12 +14,14 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: white,
     paddingBottom: 8,
+    fontFamily:'NunitoSans-Medium'
   },
   setupseed: {
     fontSize: 32,
     textAlign: 'center',
     color: white,
     paddingBottom: 14,
+    fontFamily:'NunitoSans-Medium'
   },
   logotext: {
     textAlign: 'center',
@@ -35,20 +38,20 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: text,
     paddingBottom: 8,
+    fontFamily:'NunitoSans-Medium'
   },
   importwalletpara: {
     fontSize: 17,
     textAlign: 'center',
     color: text,
     paddingBottom: 12,
-    width: 255,
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    lineHeight: 22
+    lineHeight: 22,
+    fontFamily:'NunitoSans-Medium'
   },
   setupseedbox: {
     color: text,
-    fontSize: 17
+    fontSize: 17,
+    fontFamily:'NunitoSans-Medium'
   },
   logoimg: {
     marginLeft: 'auto',
@@ -59,19 +62,14 @@ export default StyleSheet.create({
     marginRight: 'auto',
   },
   paddleftright: {
-    padding: 12,
+    padding: 8 ,
+    paddingTop:4,
     borderStyle: 'solid',
     borderColor: greylightwhite,
     borderWidth: 2,
     marginBottom: 7,
     marginTop: 7,
-    width: 200,
-    marginLeft: 'auto',
-    marginRight: 'auto',
     textAlign: 'center',
-    flexDirection: 'column',
-    alignItems: "center",
-    justifyContent: "center",
   },
   dflxremind: {
     flexDirection: 'row',
@@ -89,6 +87,7 @@ export default StyleSheet.create({
   confirseedpara: {
     color: text,
     fontSize: 16,
+    fontFamily:'NunitoSans-Medium'
   },
   logotextbtm: {
     textAlign: 'center',
@@ -100,12 +99,12 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: white,
     paddingBottom: 16,
+    fontFamily:'NunitoSans-Medium'
   },
   creaeborder: {
     borderStyle: 'solid',
     borderColor: greylightwhite,
     borderWidth: 1,
-    width: 300,
     padding: 24,
     marginBottom: 16,
   },
@@ -140,6 +139,7 @@ export default StyleSheet.create({
     color: text,
     paddingBottom: 8,
     marginTop: 22,
+    fontFamily:'NunitoSans-Medium'
   },
   dashboardusd: {
     fontSize: 36,
@@ -158,6 +158,7 @@ export default StyleSheet.create({
   sendtext: {
     color: text,
     fontSize: 20,
+    fontFamily:'NunitoSans-Medium'
   },
   dashboardlist: {
     display: 'flex',
@@ -183,6 +184,7 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: text,
     paddingBottom: 22,
+    fontFamily:'NunitoSans-Medium'
   },
   logoimgget: {
     marginLeft: 'auto',
@@ -197,13 +199,14 @@ export default StyleSheet.create({
     color: text,
     paddingBottom: 16,
     marginTop: 12,
-    lineHeight: 28
+    lineHeight: 28,
+    fontFamily:'NunitoSans-Medium'
   },
-  inputflx: {
-    flex: 0,
-    flexDirection: 'column',
-    rowGap: 2,
-  },
+  // inputflx: {
+  //   flexDirection: 'column',
+  //   rowGap: 2,
+  //   justifyContent:'center'
+  // },
   creaebordertop: {
     borderStyle: 'solid',
     borderColor: greyHiglight,
@@ -235,6 +238,7 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: text,
     paddingBottom: 8,
+    fontFamily:'NunitoSans-Medium'
   },
   input: {
     height: 50,
@@ -269,15 +273,18 @@ export default StyleSheet.create({
     color: text,
     paddingRight: 52,
     fontSize: 32,
+    fontFamily:'NunitoSans-Medium'
   },
   chvron: {
     color: text,
     paddingRight: 32,
     fontSize: 32,
+    fontFamily:'NunitoSans-Medium'
   },
   settingtitle: {
     color: text,
     fontSize: 20,
+    fontFamily:'NunitoSans-Medium'
   },
   iconsettt: {
     paddingRight: 52,
@@ -291,14 +298,12 @@ export default StyleSheet.create({
     right: 0,
   },
   creaebordertopback: {
-    borderStyle: 'solid',
-    borderColor: greyHiglight,
-    borderWidth: 1,
-    margin: 16,
-    position: 'relative',
+
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent:'center'
+    justifyContent:'center',
+    padding:20,
+    paddingBottom:0
   },
   dflxremindabsolut: {
     flexDirection: 'row',
@@ -308,7 +313,7 @@ export default StyleSheet.create({
     position: "absolute",
     left: 0,
     right: 0,
-    top: '18%',
+    top: '29%',
   },
   peginimg: {
     width: 35,
@@ -339,14 +344,17 @@ export default StyleSheet.create({
     color: white,
     fontSize: 24,
     marginTop: 40,
+    fontFamily:'NunitoSans-Medium'
   },
   dashboardbtc: {
     color: greyHiglight,
     fontSize: 16,
+    fontFamily:'NunitoSans-Medium'
   },
   btcoindash: {
     color: greyHiglight,
-    fontSize: 16
+    fontSize: 16,
+    fontFamily:'NunitoSans-Medium'
   },
   homebitcoin: {
     width: 80,
@@ -359,7 +367,8 @@ export default StyleSheet.create({
   sendheader: {
     color: white,
     fontSize: 22,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily:'NunitoSans-Medium'
   },
   marginleftright: {
     marginLeft: 14,
@@ -381,17 +390,20 @@ export default StyleSheet.create({
   },
   sendlabel: {
     fontSize: 18,
-    color: white
+    color: white,
+    fontFamily:'NunitoSans-Medium'
   },
   sendrighinpu: {
     fontSize: 18,
     color: white,
-    paddingLeft: 8
+    paddingLeft: 8,
+    fontFamily:'NunitoSans-Medium'
   },
   sendtoppadd: {
     color: white,
     fontSize: 18,
-    paddingTop: 10
+    paddingTop: 10,
+    fontFamily:'NunitoSans-Medium'
   },
   receiveclip: {
     color: white,
@@ -403,6 +415,7 @@ export default StyleSheet.create({
     color: text,
     paddingBottom: 16,
     marginTop: 12,
+    fontFamily:'NunitoSans-Medium'
   },
   setpasswordheder: {
     width: '100%',
@@ -420,6 +433,7 @@ export default StyleSheet.create({
     fontSize: 18,
     paddingRight: 12,
     fontWeight: '500',
+    fontFamily:'NunitoSans-Medium'
   },
   headersend: {
     display: 'flex',
@@ -441,10 +455,12 @@ export default StyleSheet.create({
     color: greyHiglight,
     fontSize: 17,
     paddingBottom: 4,
+    fontFamily:'NunitoSans-Medium'
   },
   dashboardlistrightfont: {
     color: greyHiglight,
     fontSize: 14,
+    fontFamily:'NunitoSans-Medium'
   },
 setupseedborder:{
   margin: 16,
@@ -459,5 +475,26 @@ bordersetup:{
   borderStyle: 'solid',
   borderColor: greyHiglight,
   borderWidth: 1,
-}
+  marginTop:14,
+  marginBottom:14
+},
+nftidname:{
+  fontSize: 16, 
+  color: white, 
+  fontWeight: '800', 
+  paddingTop: 10, 
+  paddingBottom: 4,
+   paddingLeft: 6
+},
+nftassetname:{
+  fontSize: 16,
+   color: white,
+    fontWeight: '800', 
+    paddingBottom: 4,
+     paddingLeft: 6
+},
 });
+function rgba(arg0: number, arg1: number, arg2: number, arg3: number): any | import("react-native").ColorValue | undefined {
+  throw new Error("Function not implemented.");
+}
+

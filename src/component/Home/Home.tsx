@@ -9,6 +9,7 @@ import React from 'react';
 import {
   Image,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -30,8 +31,9 @@ export function Home(props: any): React.JSX.Element {
   return (
     <>
       <SafeAreaView>
-        <View style={Custom.bgview}>
-          <Header />
+      <Header />
+        <ScrollView style={Custom.bgview}>
+        <View style={[Custom.bgview,{paddingBottom:120}]}>
           <View style={Custom.dashpaddrightleft}>
             <View>
               <View style={[Custom.homepageflx]}>
@@ -60,9 +62,12 @@ export function Home(props: any): React.JSX.Element {
                     <Button size="lg"
                       onPress={() => Navigation.push(props.componentId, {
                         component: {
-                          name: 'send',
+                          name: 'Send',
                           options: {
                             topBar: {
+                              visible: false,
+                            },
+                            bottomTabs: {
                               visible: false,
                             }
                           }
@@ -87,6 +92,8 @@ export function Home(props: any): React.JSX.Element {
                           options: {
                             topBar: {
                               visible: false,
+                            },bottomTabs: {
+                              visible: false,
                             }
                           }
                         }
@@ -110,6 +117,9 @@ export function Home(props: any): React.JSX.Element {
                           options: {
                             topBar: {
                               visible: false,
+                            },
+                            bottomTabs: {
+                              visible: false,
                             }
                           }
                         }
@@ -131,11 +141,12 @@ export function Home(props: any): React.JSX.Element {
                 Transaction History
               </Text>
             </View>
-            <View>
+            {/* <View>
               <TestnetList componentId={props.componentId} />
-            </View>
+            </View> */}
           </View>
         </View>
+        </ScrollView>
       </SafeAreaView>
     </>
   );

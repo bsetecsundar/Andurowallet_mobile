@@ -42,7 +42,9 @@ export function ManageToken(props: any): React.JSX.Element {
                                         options: {
                                             topBar: {
                                                 visible: false,
-                                            }
+                                            },bottomTabs: {
+                                                visible: false,
+                                              }
                                         }
                                     }
                                 })}
@@ -52,23 +54,24 @@ export function ManageToken(props: any): React.JSX.Element {
                                     width: 100
                                 }} titleStyle={{
                                     color: black,
-                                    fontWeight: "700", fontSize: 18,
+                                    fontFamily: "NunitoSans-bold",
+                                    fontWeight:'bold', fontSize: 18,
                                 }} containerStyle={{
                                     marginVertical: 10,
                                     marginLeft: 'auto'
                                 }}>Create</Button>
                         </View>
-                        <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
-                            <View>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
+                            <View style={{width:'80%'}}>
                                 <Input
                                     placeholder="Search Your collectibles"
                                     placeholderTextColor="#fff"
                                     inputContainerStyle={{ borderBottomWidth: 0 }}
                                     containerStyle={[{
-                                        borderWidth: 2, height: 51, borderColor: greylightwhite, marginBottom: 8, borderRadius: 4, width: 250,
+                                        borderWidth: 2, height: 51, borderColor: greylightwhite, marginBottom: 8, borderRadius: 4,
                                         marginTop: 8,
                                     }]}
-                                    style={{ color: '#fff' }}
+                                    style={[Fonts.Light,{ color: '#fff' }]}
                                 />
                             </View>
                             <View>
@@ -79,7 +82,9 @@ export function ManageToken(props: any): React.JSX.Element {
                                             options: {
                                                 topBar: {
                                                     visible: false,
-                                                }
+                                                },bottomTabs: {
+                                                    visible: false,
+                                                  }
                                             }
                                         }
                                     })} buttonStyle={{
@@ -89,7 +94,8 @@ export function ManageToken(props: any): React.JSX.Element {
                                         borderTopLeftRadius: 0,
                                     }} titleStyle={{
                                         color: white,
-                                        fontWeight: "500", fontSize: 18,
+                                        fontFamily: "NunitoSans-bold",
+                                        fontWeight:'bold', fontSize: 18,
                                     }} containerStyle={{
                                         marginVertical: 10,
                                     }}>Search</Button>
@@ -104,7 +110,9 @@ export function ManageToken(props: any): React.JSX.Element {
                                             options: {
                                                 topBar: {
                                                     visible: false,
-                                                }
+                                                },bottomTabs: {
+                                                    visible: false,
+                                                  }
                                             }
                                         }
                                     })}>
@@ -141,7 +149,9 @@ export function ManageToken(props: any): React.JSX.Element {
                                             options: {
                                                 topBar: {
                                                     visible: false,
-                                                }
+                                                },bottomTabs: {
+                                                    visible: false,
+                                                  }
                                             }
                                         }
                                     })}>
@@ -174,7 +184,7 @@ export function ManageToken(props: any): React.JSX.Element {
                     </View>
 
                 </View>
-                
+
             </SafeAreaView>
         </>
     );

@@ -23,7 +23,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 export function TokenTab (props:any): React.JSX.Element {
-  
+
   return (
     <>
     <SafeAreaView>
@@ -32,11 +32,17 @@ export function TokenTab (props:any): React.JSX.Element {
             onPress={() => Navigation.push(props.componentId,{
               component:{
                 name:'ManageToken',
+                options: {
+                  bottomTabs:{
+                      visible:false,
+                    }
               }
+              },
+
             })}>
         <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center',justifyContent:'center',marginTop:20,marginBottom:12}}>
-        <FontAwesomeIcon icon={faBars} size={16} color='white' /> 
-         <Text style={{color:white,paddingLeft:6,fontSize:18}}>Manage token list</Text>
+        <FontAwesomeIcon icon={faBars} size={16} color='white' />
+         <Text style={[Fonts.regular,{color:white,paddingLeft:6,fontSize:18}]}>Manage token list</Text>
         </View>
         </Pressable>
         <View style={Custom.dashpaddrightleft}>
@@ -45,13 +51,18 @@ export function TokenTab (props:any): React.JSX.Element {
           <Pressable
             onPress={() => Navigation.push(props.componentId,{
               component:{
-                name:'Home',
+                name:'ManageTokenDetails',
+                options: {
+                  bottomTabs: {
+                      visible: false,
+                  }
+                }
               }
             })}>
             <View style={[Custom.dashboardlist]}>
               <View style={[Custom.dashboradlistflx]}>
                 <View>
-                <Image source={require('../../assets/images/bitcoin-main.png')} 
+                <Image source={require('../../assets/images/bitcoin-main.png')}
                 style={[Custom.logoimg, { width: 45, resizeMode: 'contain',marginRight:14, }]} />
                 </View>
                 <View>
@@ -73,18 +84,20 @@ export function TokenTab (props:any): React.JSX.Element {
           <Pressable
             onPress={() => Navigation.push(props.componentId,{
               component:{
-                name:'Home',
+                name:'ManageTokenDetails',
                 options:{
                   topBar:{
                     visible:false,
-                  }
+                  },bottomTabs: {
+                    visible: false,
+                }
                 }
               }
             })}>
             <View style={[Custom.dashboardlist]}>
               <View style={[Custom.dashboradlistflx]}>
                 <View>
-                <Image source={require('../../assets/images/bitcoin-main.png')} 
+                <Image source={require('../../assets/images/bitcoin-main.png')}
                 style={[Custom.logoimg, { width: 45, resizeMode: 'contain',marginRight:14, }]} />
                 </View>
                 <View>
@@ -104,7 +117,7 @@ export function TokenTab (props:any): React.JSX.Element {
           </View>
         </View>
         </View>
-        
+
       </View>
       </SafeAreaView>
       </>

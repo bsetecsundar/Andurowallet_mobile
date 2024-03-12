@@ -1,3 +1,7 @@
 module.exports = {
-    assets: ['./src/assets/fonts/']
-};
+    Andurowallet: {
+        ios: {},
+        android: {},
+    },
+    assets: ['./assets/Fonts/']
+    };

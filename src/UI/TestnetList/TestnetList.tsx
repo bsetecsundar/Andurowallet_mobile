@@ -30,6 +30,9 @@ export function TestnetList(this: any, props: any): React.JSX.Element {
                 options: {
                   topBar: {
                     visible: false,
+                  },
+                  bottomTabs:{
+                    visible:false,
                   }
                 }
               }
@@ -64,6 +67,9 @@ export function TestnetList(this: any, props: any): React.JSX.Element {
                 options: {
                   topBar: {
                     visible: false,
+                  },
+                  bottomTabs:{
+                    visible:false,
                   }
                 }
               }
@@ -71,26 +77,28 @@ export function TestnetList(this: any, props: any): React.JSX.Element {
             <View style={[Custom.dashboardlist]}>
               <View style={[Custom.dashboradlistflx]}>
                 <View>
-                  <Image source={require('../../assets/images/bitcoin-main.png')}
+                  <Image source={require('../../assets/images/bitcoin_list.png')}
                     style={[Custom.logoimg, { width: 45, resizeMode: 'contain', marginRight: 14, }]} />
                 </View>
                 <View>
                   <Text style={[Fonts.regular, Custom.dashboardlistleftfont]}>
-                    BTC
+                    CBTC
                   </Text>
                   <Text style={[Fonts.Light, Custom.dashboardlistrightfont]}>
-                    Bitcoin Testnet
+                  Coordinate Testnet
                   </Text>
                 </View>
               </View>
               <View>
-                <Text style={[Fonts.regular, Custom.dashboardlistleftfont]}>0 BTC</Text>
+                <Text style={[Fonts.regular, Custom.dashboardlistleftfont]}>0 CBTC</Text>
                 <Text style={[Fonts.Light, Custom.dashboardlistrightfont]}>$0.00 USD</Text>
               </View>
             </View>
           </Pressable>
         </View>
+        
       </View>
+
     </>
   );
 }

@@ -8,6 +8,7 @@
 import React from 'react';
 import {
   Image,
+  Pressable,
   SafeAreaView,
   Text,
   View,
@@ -17,6 +18,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faClipboard } from '@fortawesome/free-regular-svg-icons/faClipboard';
 import Custom from '../../../src/styles/Custom';
 import { Navigation } from 'react-native-navigation';
+import Fonts from '../../styles/Fonts';
+import Clipboard from '@react-native-clipboard/clipboard';
 
 
 
@@ -24,13 +27,19 @@ export function SetUp(props: any): React.JSX.Element {
   const backupwallet = [
     'arrange', 'calds', 'dog', 'cat', 'viwe', 'sun', 'arrange', 'arrange', 'arrange', 'arrange', 'arrange','arrange'
   ]
+
+  const handleClipboard = () => {
+    const backupString = backupwallet.join('\n');
+    Clipboard.setString(backupString);
+  };
   return (
     <SafeAreaView>
     <View style={Custom.bgview}>
-      <View style={Custom.dflx}>
+      <View style={[Custom.dashpaddrightleft,{marginTop:20}]}>
         <View>
           <View style={Custom.logotext}>
-            <Image source={require('../../assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
+            <Image source={require('../../assets/images/small_logo.png')} style={[Custom.logoimg, { width: 200,
+              resizeMode: 'contain',paddingTop:12 }]} />
           </View>
           <View>
             <Text style={Custom.setupseed}>
@@ -46,11 +55,13 @@ export function SetUp(props: any): React.JSX.Element {
               <View style={[Custom.setupseedborder]}>
               {backupwallet.map((item: any, index: any) => {
                   return (
-                    <Text style={{ color: 'white', fontSize: 16, padding: 8, }} key={`key_${item}_${index}`}>{item}</Text>
+                    <Text style={[Fonts.Light,{ color: 'white', fontSize: 16, padding: 8, }]} key={`key_${item}_${index}`}>{item}</Text>
                   );
                 })}
               </View>
+              <Pressable onPress={handleClipboard}>
               <FontAwesomeIcon icon={faClipboard} style={Custom.faclipboard} size={20} />
+              </Pressable>
             </View>
             <View style={[Custom.dflxremind]} >
               <Button size="lg"
@@ -70,7 +81,8 @@ export function SetUp(props: any): React.JSX.Element {
                   borderWidth: 1,
                 }} titleStyle={{
                   color: '#04f76e',
-                  fontWeight: '200', fontSize: 18,
+                  fontFamily: "NunitoSans-light",
+                  fontWeight:'200',  fontSize: 18,
                 }} containerStyle={{
                   marginVertical: 10,
                   marginHorizontal: 10,
@@ -92,7 +104,8 @@ export function SetUp(props: any): React.JSX.Element {
                   borderRadius: 8,
                 }} titleStyle={{
                   color: '#000',
-                  fontWeight: 'bold', fontSize: 18,
+                  fontFamily: "NunitoSans-bold",
+                  fontWeight:'bold', fontSize: 18,
                 }} containerStyle={{
                   marginVertical: 10,
                 }}>Next</Button>

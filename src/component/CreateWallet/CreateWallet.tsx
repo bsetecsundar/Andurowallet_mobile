@@ -23,80 +23,81 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload'
 import { primary, black } from '../../../src/styles/Variables'
 import Custom from '../../../src/styles/Custom';
 import { Navigation } from 'react-native-navigation';
+import Fonts from '../../styles/Fonts';
+import { fonts } from '@rneui/base';
 
 export function CreateWallet(props: any) {
-
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   return (
     <SafeAreaView>
     <View style={Custom.bgview}>
-      <View style={Custom.dflx}>
-        <View>
-          <View style={Custom.logotextbtm}>
-            <Image source={require('../../assets/images/logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', }]} />
-          </View>
-          <View style={Custom.creaeborder}>
-            <View style={Custom.fontplus}>
-              <View style={Custom.borderplus}>
-                <FontAwesomeIcon icon={faPlus} style={Custom.faplusicon} />
-              </View>
-              <Text style={Custom.titlepara}>
-                New here?
-              </Text>
+      <View style={{flex:1,justifyContent: 'center',flexDirection:'column'}}>
+        <View style={{paddingLeft:16,paddingRight:16,}}>
+            <View style={Custom.logotextbtm}>
+              <Image source={require('../../assets/images/small_logo.png')} style={[Custom.logoimg, { width: 200, resizeMode: 'contain', 
+            marginBottom:12}]} />
             </View>
-            <Button size="lg"
-              onPress={() => Navigation.push(props.componentId, {
-                component: {
-                  name: 'CreatenewPassword',
-                  options:{
-                    topBar:{
-                      visible:false,
+            <View>
+            <View style={Custom.creaeborder}>
+              <View style={Custom.fontplus}>
+                <View style={Custom.borderplus}>
+                  <FontAwesomeIcon icon={faPlus} style={Custom.faplusicon} />
+                </View>
+                <Text style={[Custom.titlepara,Fonts.medium]}>
+                  New here?
+                </Text>
+              </View>
+              <Button size="lg"
+                onPress={() => Navigation.push(props.componentId, {
+                  component: {
+                    name: 'CreatenewPassword',
+                    options:{
+                      topBar:{
+                        visible:false,
+                      }
                     }
                   }
-                }
-              })}
-              buttonStyle={{
-                backgroundColor: primary,
-                borderRadius: 8,
-              }} titleStyle={{
-                color: black,
-                fontWeight: 'bold', fontSize: 18,
-              }}>Create Wallet</Button>
-          </View>
-          <View style={Custom.creaeborder}>
-            <View style={Custom.fontplus}>
-              <View style={[Custom.borderplus,{borderWidth:0}]}>
-                <FontAwesomeIcon icon={faDownload} size={20} style={Custom.faplusicon} />
-              </View>
-              <Text style={Custom.titlepara}>
-                Have a seed phrase?
-              </Text>
+                })}
+                buttonStyle={{
+                  backgroundColor: primary,
+                  borderRadius: 8,
+                }} titleStyle={{
+                  color: black,
+                  fontFamily: "NunitoSans-bold",
+                  fontWeight:'bold', fontSize: 18,
+                }}>Create Wallet</Button>
             </View>
-            <Button size="lg"
-              onPress={() => Navigation.push(props.componentId, {
-                component: {
-                  name: 'ImportWallet',
-                  options:{
-                    topBar:{
-                      visible:false,
+            <View style={Custom.creaeborder}>
+              <View style={Custom.fontplus}>
+                <View style={[Custom.borderplus,{borderWidth:0}]}>
+                  <FontAwesomeIcon icon={faDownload} size={20} style={Custom.faplusicon} />
+                </View>
+                <Text style={[Custom.titlepara,Fonts.medium]}>
+                  Have a seed phrase?
+                </Text>
+              </View>
+              <Button size="lg"
+                onPress={() => Navigation.push(props.componentId, {
+                  component: {
+                    name: 'ImportWallet',
+                    options:{
+                      topBar:{
+                        visible:false,
+                      }
                     }
                   }
-                }
-                
-              })}
-              buttonStyle={{
-                backgroundColor: primary,
-                borderRadius: 8,
-              }} titleStyle={{
-                color: black,
-                fontWeight: 'bold', fontSize: 18,
-              }}>Import Wallet</Button>
-          </View>
+                  
+                })}
+                buttonStyle={{
+                  backgroundColor: primary,
+                  borderRadius: 8,
+                }} titleStyle={{
+                  color: black, fontSize: 18,
+                  fontFamily: "NunitoSans-bold",
+                  fontWeight:'bold'
+                }}>Import Wallet</Button>
+            </View>
+            </View>
         </View>
       </View>
     </View>

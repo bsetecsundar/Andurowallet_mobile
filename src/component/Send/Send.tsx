@@ -20,13 +20,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { Input } from '@rneui/base';
 import { Navigation } from 'react-native-navigation';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 export function Send(props:any): React.JSX.Element {
 
   return (
     <>
     <SafeAreaView>
-      <View style={Custom.bgview}>
+    <KeyboardAwareScrollView style={Custom.bgview}>
+      <View style={[Custom.bgview]}>
         <View style={Custom.headerflx}>
           <View >
             <View style={Custom.logotext}>
@@ -89,12 +91,13 @@ export function Send(props:any): React.JSX.Element {
                 <View style={{ width: 60 }}>
                   <Button size="sm" buttonStyle={{
                     backgroundColor: 'transparent',
-                    borderRadius: 4,
+                    borderRadius: 20,
                     borderColor: "#04f76e",
                     borderWidth: 1,
                   }} titleStyle={{
                     color: '#04f76e',
-                    fontWeight: 'bold',
+                    fontFamily: "NunitoSans-bold",
+                    fontWeight:'bold',
                     fontSize: 12,
                   }} containerStyle={{
                     marginVertical: 10,
@@ -142,7 +145,7 @@ export function Send(props:any): React.JSX.Element {
                       }]}
                       style={{ color: white }}
                     />
-                    <Text style={{ fontSize: 14, color: 'red', paddingLeft: 8 }}>
+                    <Text style={[Fonts.medium,{ fontSize: 14, color: 'red', paddingLeft: 8 }]}>
                       BTC will be converted to CBTC and sent here. Make sure this is a valid Coordinate address.
                     </Text>
                   </View>
@@ -150,8 +153,8 @@ export function Send(props:any): React.JSX.Element {
               </View>
             </View>
           </View>
-        </View>
-        <View style={[Custom.dflxremind]} >
+          <View style={{flexDirection:'row',paddingLeft:12,paddingRight:12 , marginTop:22,marginBottom:22}} >
+          <View style={{width:"50%"}}>
           <Button size="lg"
             onPress={() => Navigation.push(props.componentId, {
               component: {
@@ -159,35 +162,44 @@ export function Send(props:any): React.JSX.Element {
                 options:{
                   topBar:{
                     visible:false,
+                  },bottomTabs: {
+                    visible: false,
                   }
                 }
               }
             })}
             buttonStyle={{
               borderColor: '#04f76e',
-              borderRadius: 4,
+              borderRadius: 30,
               borderWidth: 1,
             }} titleStyle={{
               color: '#04f76e',
-              fontWeight: '200', fontSize: 18,
+              fontFamily: "NunitoSans-bold",
+              fontWeight:'100',  fontSize: 18,
             }} containerStyle={{
               marginVertical: 10,
               marginHorizontal: 10,
-              width: 100
             }}
             type="outline">Cancel</Button>
+            </View>
+            <View style={{width:"50%"}}>
           <Button size="lg" buttonStyle={{
             backgroundColor: '#04f76e',
-            borderRadius: 4,
+            borderRadius: 30,
           }} titleStyle={{
             color: '#000',
-            fontWeight: 'bold', fontSize: 18,
+            fontFamily: "NunitoSans-bold",
+            fontWeight:'bold',  fontSize: 18,
           }} containerStyle={{
             marginVertical: 10,
-            width: 100
           }}>Next</Button>
+          </View>
+
         </View>
+        </View>
+
       </View>
+      </KeyboardAwareScrollView>
       </SafeAreaView>
     </>
   );
